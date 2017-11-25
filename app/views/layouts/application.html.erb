@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AutomovilesRails</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <!-- Barra de navegacion -->
+    <%= render 'partials/navbar' %>
+
+    <!-- Agregamos alerta de usuarios -->
+    <%= render 'partials/alert_devise' %>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+    
+
+  </body>
+</html>

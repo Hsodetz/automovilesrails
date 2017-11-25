@@ -1,0 +1,59 @@
+
+<%= render 'autos/partials_autos/message_success' %>
+
+<div class="panel panel-default">
+  <div class="panel-heading" style="background-color: #2c3e50; color: #ecf0f1;">
+    <h3 class="panel-title"> 
+        <i class="fa fa-list-ol" aria-hidden="true"></i> 
+        Listado de Autos
+        <span class="label label-primary pull-right"> <%= @autos.size %> Autos </span> 
+    </h3>
+  </div>
+  <div class="panel-body">
+    
+    <table class="table">
+
+        <thead>
+            <tr class="text-center table-condensed table-hover table-responsive text-primary">
+                <td>Id</td>
+                <td>Marca</td>
+                <td>Modelo</td>
+                <td>Color</td>
+                <td>Accion</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @autos.each do |auto| %> 
+            <tr class="text-center">
+                <td> <%= auto.id %> </td>
+                <td> <%= auto.marca %> </td>
+                <td> <%= auto.modelo %> </td>
+                <td> <%= auto.color %> </td>
+                <td>
+                     <%= link_to auto_path(auto), class: "btn btn-primary btn-sm" do %>
+                        <i class="fa fa-eye" aria-hidden="true"></i> Mas
+                     <% end %>
+
+                     <%= link_to edit_auto_path(auto), class: "btn btn-warning btn-sm" do %>
+                        <i class="fa fa-pencil" aria-hidden="true"></i> Editar
+                     <% end %>
+
+                     <%= link_to auto_path(auto), class: "btn btn-danger btn-sm",
+                        method: :delete, data: {confirm: "Estas seguro de eliminar el auto #{auto.marca} #{auto.modelo}?", 
+                        commit: "Seguro!", title: 'Eliminar Auto!', cancel: 'Cancela!'} do %>
+                        <i class="fa fa-trash" aria-hidden="true"></i> Eliminar
+                     <% end %>
+                </td>
+            </tr>
+            <% end %>  
+
+        </tbody>
+        
+    </table>
+    <p class="label label-danger pull-right"> By Helmuth Sodetz </p>
+
+    <%= paginate(@autos) %>
+
+  </div>
+</div>

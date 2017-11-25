@@ -1,0 +1,39 @@
+
+
+<%= render 'autos/partials_autos/message_success' %>
+
+<div class="panel panel-default">
+  <div class="panel-heading" style="background-color: #2c3e50; color: #ecf0f1;">
+    <h3 class="panel-title"> 
+      <i class="fa fa-car" aria-hidden="true"></i> 
+      <%= @auto.marca %> 
+      <span class="pull-right"> 
+        <% @usuarios.each do |usuario| %>
+          <span class="label label-primary">Creado Por: <%= usuario.name %> </span> 
+        <% end %>  
+      </span>
+    </h3>
+  </div>
+  <div class="panel-body">
+
+    <div>
+      <%= image_tag(@auto.foto_url(:medium), class: "img-rounded") %>
+    </div>
+    <span> <%= link_to edit_auto_path(@auto), class: "label label-warning" do %>
+          <i class="fa fa-pencil" aria-hidden="true"></i> Editar
+        <% end %> 
+    </span>
+    
+    <p class="label label-warning pull-right"> <%= @auto.contador_visita %> Visitas </p>
+    <br>
+    <br>
+    <ul class="list-group">
+      <li class="list-group-item"> Modelo:  <%= @auto.modelo %> </li>
+      <li class="list-group-item"> Color:   <%= @auto.color %> </li>
+      <li class="list-group-item"> Hp:      <%= @auto.hp %> CV </li>
+      <li class="list-group-item"> Precio:  <%= @auto.precio %> $ </li>
+      <li class="list-group-item">          <%= @auto.descripcion %> </li>
+    </ul>
+
+  </div>
+</div>

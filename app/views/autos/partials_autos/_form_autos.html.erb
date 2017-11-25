@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-md-8">
+
+        <div class="panel panel-default">
+        <div class="panel-heading" style="background-color: #2c3e50; color: #ecf0f1;">
+            <h3 class="panel-title"> <i class="<%= icono %>" aria-hidden="true"></i> <%= titulo_form_autos %> </h3>
+        </div>
+        <div class="panel-body">
+            
+            <%= bootstrap_form_for @auto  do |f| %>
+
+                <%= f.text_field :marca %>
+                <%= f.text_field :modelo %>
+                <%= f.text_field :color %>
+                <%= f.text_field :hp %>
+                <%= f.file_field :foto %>                
+                <%= f.text_area  :descripcion %>
+                <%= f.text_field :precio %>
+                <%= f.submit boton, class: "btn btn-primary" %>
+
+            <% end %>
+
+        </div>
+        </div>
+
+    </div>
+</div>
