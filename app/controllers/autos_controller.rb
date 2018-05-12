@@ -4,9 +4,12 @@ class AutosController < ApplicationController
 
   before_action :set_id, only: [:show, :edit, :update, :destroy]
 
+  
+
   def index
     # Usamos kaminari para hacer la paginacion
     @autos = Auto.all.order(marca: :desc).page(params[:page]).per(5)
+    
   end
 
   def show

@@ -38,6 +38,12 @@ gem 'mini_magick'
 # Modal para confirmacion modal
 gem 'data-confirm-modal'
 
+#gemas para produccion
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor'
+end
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
